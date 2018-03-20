@@ -47,79 +47,48 @@ while a <= 9:
     # the 5 is because of a special case when a L or X shaped design is made..
     # try it out
 
-    if xs == 3 or xs == 5 or os == 3 or os == 5:
-        # horizontal check:
-        if len(set(game[0])) == 1:
-            if "o" in set(game[0]):
+    if xs == 3 or 5 or os == 3 or 5:
+
+        
+        for i in range(0, 3):
+            # horizontal check:
+
+            if len(set(game[i])) == 1:
+
+                if "o" in set(game[i]):
+                    print("o wins")
+                    break
+                elif "x" in set(game[i]):
+                    print("x wins")
+                    break
+
+
+            # vertical check:
+            elif game[0][i] == game[1][i] == game[2][i] == "x":
+               print("x wins")
+               break
+
+            elif game[0][i] == game[1][i] == game[2][i] == "o":
+               print("o wins")
+               break
+
+
+            # diagonal check:
+            elif game[0][0] == game[1][1] == game[2][2] == "o":
                 print("o wins")
                 break
-            elif "x" in set(game[0]):
+
+            elif game[0][2] == game[1][1] == game[2][0] == "o":
+                print("o wins")
+                break
+
+            elif game[0][0] == game[1][1] == game[2][2] == "x":
                 print("x wins")
                 break
 
-        elif len(set(game[1])) == 1:
-            if "o" in set(game[1]):
-                print("o wins")
-                break
-
-            elif "x" in set(game[1]):
+            elif game[0][2] == game[1][1] == game[2][0] == "x":
                 print("x wins")
                 break
-
-        elif len(set(game[2])) == 1:
-            if "o" in set(game[2]):
-                print("o wins")
-                break
-
-            elif "x" in set(game[2]):
-                print("x wins")
-                break
-
-        # vertical check:
-        elif game[0][0] == game[1][0] == game[2][0] == "o":
-            print("o wins")
-            break
-
-        elif game[0][0] == game[1][0] == game[2][0] == "x":
-            print("x wins")
-            break
-
-        elif game[0][1] == game[1][1] == game[2][1] == "o":
-            print("o wins")
-            break
-
-        elif game[0][1] == game[1][1] == game[2][1] == "x":
-            print("x wins")
-            break
-
-        elif game[0][2] == game[1][2] == game[2][2] == "o":
-            print("o wins")
-            break
-
-        elif game[0][2] == game[1][2] == game[2][2] == "x":
-            print("x wins")
-            break
-
-        elif game[0][0] == game[1][0] == game[2][0] == "o":
-            print("o wins")
-            break
-
-        # diagonal check:
-        elif game[0][0] == game[1][1] == game[2][2] == "o":
-            print("o wins")
-            break
-
-        elif game[0][2] == game[1][1] == game[2][0] == "o":
-            print("o wins")
-            break
-
-        elif game[0][0] == game[1][1] == game[2][2] == "x":
-            print("x wins")
-            break
-
-        elif game[0][2] == game[1][1] == game[2][0] == "x":
-            print("x wins")
-            break
 
     else:
         print("no winner yet")
